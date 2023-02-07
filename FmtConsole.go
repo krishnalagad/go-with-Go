@@ -14,4 +14,9 @@ func main() {
 	fmt.Printf("Number octal: %o ", 345)
 	fmt.Printf("Number decimal: %d ", 345)
 	fmt.Printf("Number hexodecimal: %x ", 3435)
+
+	fmt.Println()
+
+	fmt.Printf("String: %s\n ", "Krishna")
+	fmt.Printf("String: %q ", "Krishna")
 }
