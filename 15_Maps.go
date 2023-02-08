@@ -18,4 +18,8 @@ func main() {
 
 	delete(mp, "guava")
 	fmt.Println(mp)
+
+	// check the existance of record in map
+	val, ok := mp["banana"]
+	fmt.Println(val, ok)
 }
