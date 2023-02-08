@@ -9,9 +9,11 @@ func main() {
 
 	name := "krishna"
 
-	fmt.Println("Before if")
 	if name == "krishna" {
-		fmt.Println("Inside if")
+		fmt.Println("You are allowed")
+	} else if name == "lagad" {
+		fmt.Println("You are allowed")
+	} else {
+		fmt.Println("You are not allowed")
 	}
-	fmt.Println("After if")
 }
