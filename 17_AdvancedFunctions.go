@@ -37,6 +37,7 @@ func main() {
 
 	// passing function as a argument to a function.
 	test3(fun)
-
+	
+	// return function
 	returnFunc("Krishna Lagad")()
 }
