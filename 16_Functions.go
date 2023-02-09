@@ -20,10 +20,16 @@ func mulName(name string, no int) {
 	}
 }
 
+func square(no int) int {
+	return no * no
+}
+
 func mulReturns(a, b int) (r1 int, r2 int) {
+	defer fmt.Println("Hello")
 	r1 = a + b
 	r2 = a - b
-	return 
+	fmt.Println("Before return")
+	return
 }
 
 func main() {
@@ -33,4 +39,5 @@ func main() {
 	mulName("Krishna", 10)
 	ans1, ans2 := mulReturns(5, 3)
 	fmt.Println(ans1, ans2)
+	fmt.Println(square(56))
 }
