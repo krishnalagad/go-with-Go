@@ -12,6 +12,13 @@ func test3(myFunc func(x int) int){
 	fmt.Println(res)
 }
 
+// returning function 
+func returnFunc(x string) func(){
+	return func(){
+		fmt.Println(len(x))
+	}
+}
+
 func main() {
 	x := test1
 	x(34)
@@ -30,4 +37,6 @@ func main() {
 
 	// passing function as a argument to a function.
 	test3(fun)
+
+	returnFunc("Krishna Lagad")()
 }
