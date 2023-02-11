@@ -10,6 +10,7 @@ func changeValue2(str string) {
 	str = "changed"
 }
 
+// main function.
 func main() {
 	toChange := "hello"
 	changeValue1(&toChange)
