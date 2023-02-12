@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// main function 
 func main() {
 	// Mutable: change in y will change in x and vice versa.
 	var x[] int = []int { 1, 2, 3, 4}
