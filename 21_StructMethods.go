@@ -28,6 +28,15 @@ func (s Student) getAge() int {
 	return s.age
 }
 
+// additional methods
+func (s Student) getAverageGrades() float32 {
+	sum := 0
+	for _, v := range s.grades {
+		sum += v
+	}
+	return float32(sum) / float32(len(s.grades))
+}
+
 func main() {
 	// setting values to object in constructor
 	s1 := Student{"Krishna", []int{60, 56, 54}, 22} // parameterized constructor
@@ -41,4 +50,6 @@ func main() {
 	s2.setAge(21)
 
 	fmt.Println(s2.getName(), s2.getGrades(), s2.getAge())
+
+	fmt.Println(s2.getAverageGrades())
 }
