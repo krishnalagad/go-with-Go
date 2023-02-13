@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
-const url = "https://lco.dev"
+const url = "http://bit.ly/3x2D8oj"
 
 func main() {
 	fmt.Println("Go web request")
@@ -17,5 +18,12 @@ func main() {
 
 	fmt.Printf("Response type is: %T", response)
 
-	response.Body.Close()	// user's responsibility to close the connection.
+	defer response.Body.Close() // user's responsibility to close the connection.
+
+	databytes, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		panic(err)
+	}
+	content := string(databytes)
+	fmt.Println(string(content))
 }
