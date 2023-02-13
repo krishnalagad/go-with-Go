@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+
+  <!-- Webpage Title -->
+  <title>Portfolio Website</title>
+
+  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+    rel="stylesheet" />
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/fontawesome-all.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Favicon  -->
+  <link rel="icon" href="./images/img/logo.png" />
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <!-- Image Logo -->
+      <a class="navbar-brand logo-image logo-text" href="index.html"><img src="./images/img/fevicon.png"
+          alt="alternative" />
+        <span class="color-changing-text" style="font-family: sans-serif">&nbsp;My Portfolio</span>
+      </a>
+
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto nav-ul">
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#skills-section">Skills</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Projects</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item page-scroll" href="#" data-toggle="modal"
+                data-target="#modalForKanbanProject">Kanban Board</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item page-scroll" href="#" data-toggle="modal"
+                data-target="#modalForWireframeProject">Wireframe Builder</a>
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item page-scroll" href="https://github.com/krishnalagad/blog-app-springboot-react"
+                target="_blank">Blogging Application API's</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item page-scroll" href="https://github.com/krishnalagad/classroom-quiz"
+                target="_blank">Classroom Quiz</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item page-scroll" href="https://github.com/krishnalagad/smart-contacts-manager"
+                target="_blank">Smart Contact Manager</a>
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item page-scroll" href="https://github.com/krishnalagad" target="_blank">Others</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <span class="nav-item social-icons">
+          <span class="fa-stack">
+            <a target="_blank" href="https://www.linkedin.com/in/krishna-lagad/">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-linkedin fa-stack-1x"></i>
+            </a>
+          </span>
+          <span class="fa-stack">
+            <a target="_blank" href="https://twitter.com/krishnalagad__">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x"></i>
+            </a>
+          </span>
+        </span>
+      </div>
+      <!-- end of navbar-collapse -->
+    </div>
+    <!-- end of container -->
+  </nav>
+  <!-- end of navbar -->
+  <!-- end of navigation -->
+
+  <!-- Modal bootstrap start -->
+
+  <!-- Modal for kanban project-->
+  <div class="modal fade" id="modalForKanbanProject" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title poppins-text" id="exampleModalLongTitle">
+            Kanban Board
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="poppins-text" style="text-align: justify; padding: 10px;">
+            It's the company's project I used to work on when I was in Real IT
+            Solutions as Java developer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal kanban bootstrap end -->
+
+  <!-- model for wireframe start -->
+
+  <div class="modal fade" id="modalForWireframeProject" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title poppins-text" id="exampleModalLongTitle">
+            Wireframe Builder
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="poppins-text" style="text-align: justify; padding: 10px;">
+            It's the company's project I used to work on when I was in Real IT
+            Solutions as Java developer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end wireframe model -->
+
+  <!-- Side social buttons -->
+
+  <div class="sticky-container">
+    <ul class="sticky">
+      <li>
+        <img src="./images/img/facebook.png" width="32" height="32" />
+        <p>
+          <a href="https://www.facebook.com/krishnalagad2/" target="_blank">Like me on<br /><b>Facebook</b></a>
+        </p>
+      </li>
+      <li>
+        <img src="./images/img/twitter.png" width="32" height="32" />
+        <p>
+          <a href="https://twitter.com/krishnalagad__" target="_blank">Follow me on<br /><b>Twitter</b></a>
+        </p>
+      </li>
+      <li>
+        <img src="./images/img/gmail.png" width="32" height="32" />
+        <p>
+          <a href="mailto:krishnalagad2@gmail.com?subject=Erase this and type your subject&body=Erase this and type your body"
+            target="_blank">Mail me on<br /><b>Gmail</b></a>
+        </p>
+      </li>
+      <li>
+        <img src="./images/img/instagram.png" width="32" height="32" />
+        <p>
+          <a href="https://www.instagram.com/krishna_lagad.insta/" target="_blank">Follow me
+            on<br /><b>Instagram</b></a>
+        </p>
+      </li>
+      <li>
+        <img src="./images/img/linkedin.png" width="32" height="32" />
+        <p>
+          <a href="https://www.linkedin.com/in/krishna-lagad/" target="_blank">Follow me on<br /><b>LinkedIn</b></a>
+        </p>
+      </li>
+      <li>
+        <img src="./images/img/github.png" width="32" height="32" />
+        <p>
+          <a href="https://github.com/krishnalagad" target="_blank">Follow me on<br /><b>Github</b></a>
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- end of social buttons -->
+
+  <!-- Header -->
+  <section id="header" class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="text-container header-div">
+            <h1 class="h1-large text-3">
+              Hello you, myself <span style="color: orange">Krishna</span> and
+              I'm<br />
+              <span class="typing"></span>
+            </h1>
+            <a class="btn-solid-lg page-scroll" href="./Krishna-Resume-4.pdf" download="Krishna-Resume"><span>Download
+                Resume</span></a>
+            <a class="btn-outline-lg page-scroll" href="#contact"><span class="header-contact"><i
+                  class="fas fa-user"></i>Contact Me</span></a>
+          </div>
+          <!-- end of text-container -->
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </section>
+  <!-- end of header -->
+  <!-- end of header -->
+
+  <!-- About-->
+  <div id="about" class="basic-1 bg-gray">
+    <div class="container">
+      <h2 class="mb-4" style="text-align: center; margin-bottom: 10px">
+        <u>About Me</u>
+      </h2>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="imgdiv">
+            <p class="text-container first left" style="text-align: center">
+              <img class="my-img" src="./images/img/myImg1.jpg" alt="" /><br />
+              <span class="text-center" style="
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 12px;
+                    margin-top: 0%;
+                  ">I am who this portfolio belongs to.</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="text-container second">
+            <p style="text-align: justify" class="poppins-text padding-10">
+              <span style="font-size: 23px; font-weight: bold">Hi there I'm
+                <span class="color-changing-text" style="color: orange">Krishna</span>,</span>
+              a final year computer Engineering student, who loves to raise
+              along with the technology. At All India Shree Shivaji Memorial
+              Society's Institute of Information Technology, I am pursuing my
+              graduation though, I'm highly passionated to self learning
+              things. I am a self tought programmer who learns new things from
+              trial and error. I like web surfing a lot to acquire knowledge
+              and to get acquainted with new technology. I am upcoming
+              engineer with optimistic attitude and is always ready to find
+              efficient & impeccable solutions on real world challenges in
+              life itinerary. I be of the goal that making people aware about
+              how new technology makes our life more easier to survive. These
+              days I love Studying and working in Java.
+            </p>
+          </div>
+          <!-- end of text-container -->
+        </div>
+        <!-- end of col -->
+        <div class="col-lg-4">
+          <div class="text-container third poppins-text padding-10">
+            <div class="working-head">
+              <p style="font-weight: bold; font-size: 21px">
+                Work Experiences and Schooling
+              </p>
+              <hr />
+            </div>
+            <div class="time">10/2021 - 11/2021</div>
+            <h6>Java Developer Trainee at Real IT Solutions</h6>
+            <p class="poppins-text" style="font-size: 13px">
+              Contributed in company's projects like Kanban Board, Wireframe
+              Builder.
+            </p>
+            <div class="time">09/2021 - 10/2021</div>
+            <h6>Campus ambassador at Internshala</h6>
+            <p class="poppins-text" style="font-size: 13px">
+              Creating awareness about Internshala programms.
+            </p>
+            <hr />
+            <div class="time">2021 - PRESENT</div>
+            <h6>AISSMS's Institute of Information Technology, Pune</h6>
+            <p class="poppins-text" style="font-size: 13px">
+              Bachlor in Computer Engineering
+            </p>
+            <div class="time">2017 - 2020</div>
+            <h6>Government Polytechnic, Awasari (kh)</h6>
+            <p style="font-size: 13px">Diploma in Computer Engineering</p>
+            <hr />
+          </div>
+        </div>
+        <!-- end of text-container -->
+        <!-- </div> -->
+        <!-- end of col -->
+
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of basic-1 -->
+  <!-- end of about -->
+
+  <!-- Skills --------- -->
+
+  <section class="ftco-section bg-light" id="skills-section">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+          <span class="subheading">Skills</span>
+          <h2 class="mb-4">My Skills</h2>
+          <p class="poppins-text padding-10">
+            I solve problems in creative way. It helps me more to learn the
+            importance of applying classical strategies to modern-day
+            projects. At first year of my diploma, I started learning C
+            programming and thats awake more wishful thoughts in me about
+            learning more and more programming languages. Also, I am known
+            with the concepts like Stack, Queue, Linkedlist, Hash Table in
+            Data Structure and memory & resource management. I find myself
+            more drowned in Java Programming and I like to learn and work in
+            its frameworks like Spring & hibernate.
+          </p>
+        </div>
+      </div>
+      <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h2 class="h5 font-weight-bold text-center mb-4">
+              Spring Boot - Hibernate
+            </h2>
+
+            <!-- Progress bar 1 -->
+            <div class="progress mx-auto" data-value="80">
+              <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h2 font-weight-bold">
+                  80<sup class="small">%</sup>
+                </div>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <div class="row text-center mt-4">
+              <div class="col-6 border-right">
+                <div class="h4 font-weight-bold mb-0">50%</div>
+                <span class="small text-gray">Spring Boot</span>
+              </div>
+              <div class="col-6">
+                <div class="h4 font-weight-bold mb-0">30%</div>
+                <span class="small text-gray">Hibernate</span>
+              </div>
+            </div>
+            <!-- END -->
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h2 class="h5 font-weight-bold text-center mb-4">
+              Java EE - Python
+            </h2>
+
+            <!-- Progress bar 1 -->
+            <div class="progress mx-auto" data-value="90">
+              <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h2 font-weight-bold">
+                  90<sup class="small">%</sup>
+                </div>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <div class="row text-center mt-4">
+              <div class="col-6 border-right">
+                <div class="h4 font-weight-bold mb-0">60%</div>
+                <span class="small text-gray">Java EE</span>
+              </div>
+              <div class="col-6">
+                <div class="h4 font-weight-bold mb-0">30%</div>
+                <span class="small text-gray">Python</span>
+              </div>
+            </div>
+            <!-- END -->
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h2 class="h5 font-weight-bold text-center mb-4">
+              Angular - ReactJS
+            </h2>
+
+            <!-- Progress bar 1 -->
+            <div class="progress mx-auto" data-value="68">
+              <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h2 font-weight-bold">
+                  68<sup class="small">%</sup>
+                </div>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <div class="row text-center mt-4">
+              <div class="col-6 border-right">
+                <div class="h4 font-weight-bold mb-0">43%</div>
+                <span class="small text-gray">Angular</span>
+              </div>
+              <div class="col-6">
+                <div class="h4 font-weight-bold mb-0">25%</div>
+                <span class="small text-gray">ReactJS</span>
+              </div>
+            </div>
+            <!-- END -->
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h2 class="h5 font-weight-bold text-center mb-4">
+              MySQL - MongoDB
+            </h2>
+
+            <!-- Progress bar 1 -->
+            <div class="progress mx-auto" data-value="75">
+              <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h2 font-weight-bold">
+                  75<sup class="small">%</sup>
+                </div>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <div class="row text-center mt-4">
+              <div class="col-6 border-right">
+                <div class="h4 font-weight-bold mb-0">55%</div>
+                <span class="small text-gray">MySQL</span>
+              </div>
+              <div class="col-6">
+                <div class="h4 font-weight-bold mb-0">20%</div>
+                <span class="small text-gray">MongoDB</span>
+              </div>
+            </div>
+            <!-- END -->
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h2 class="h5 font-weight-bold text-center mb-4">C - C++</h2>
+
+            <!-- Progress bar 1 -->
+            <div class="progress mx-auto" data-value="65">
+              <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h2 font-weight-bold">
+                  65<sup class="small">%</sup>
+                </div>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <div class="row text-center mt-4">
+              <div class="col-6 border-right">
+                <div class="h4 font-weight-bold mb-0">30%</div>
+                <span class="small text-gray">C</span>
+              </div>
+              <div class="col-6">
+                <div class="h4 font-weight-bold mb-0">35%</div>
+                <span class="small text-gray">C++</span>
+              </div>
+            </div>
+            <!-- END -->
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h2 class="h5 font-weight-bold text-center mb-4">
+              Data Structure - Git/Github
+            </h2>
+
+            <!-- Progress bar 1 -->
+            <div class="progress mx-auto" data-value="90">
+              <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <div class="h2 font-weight-bold">
+                  90<sup class="small">%</sup>
+                </div>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <div class="row text-center mt-4">
+              <div class="col-6 border-right">
+                <div class="h4 font-weight-bold mb-0">60%</div>
+                <span class="small text-gray">Data Structure</span>
+              </div>
+              <div class="col-6">
+                <div class="h4 font-weight-bold mb-0">30%</div>
+                <span class="small text-gray">Git/Github</span>
+              </div>
+            </div>
+            <!-- END -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end -->
+
+  <!-- Contact -->
+  <div id="contact" class="form-1 bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <h2>Contact details</h2>
+          <p class="p-heading poppins-text">
+            For any type of online project please don't hesitate to get in
+            touch with me. The fastest way is to send me your message using
+            the following email
+            <a class="blue no-line" href="mailto:krishnalagad2@gmail.com">krishnalagad2@gmail.com</a>
+          </p>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <!-- Contact Form -->
+          <!-- <form id="contactForm" method="post"> -->
+          <div class="form-group">
+            <input type="text" class="form-control-input" id="cname" required />
+            <label class="label-control" for="cname">Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control-input" id="cemail" required />
+            <label class="label-control" for="cemail">Email</label>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+            <label class="label-control" for="cmessage">Project details</label>
+          </div>
+          <div class="form-group">
+            <button class="form-control-submit-button" data-toggle="modal" data-target="#modalForSubmitContact">
+              Submit
+            </button>
+          </div>
+          <!-- </form> -->
+          <!-- end of contact form -->
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of form-1 -->
+  <!-- end of contact -->
+
+  <div class="modal fade" id="modalForSubmitContact" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title poppins-text" id="exampleModalLongTitle">
+            Message
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="poppins-text" style="text-align: justify; padding: 10px;">
+            Thank you for trying to connect with me. I'd love to collaborately
+            work with you. Please use above mentioned gmail address to contact
+            me or you can click on social media icons on the right side of your
+            screen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="a-social-b">
+    <a href="https://www.facebook.com/krishnalagad2/"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/krishnalagad__"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/krishna_lagad.insta/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/krishna-lagad-7387b7171"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/krishnalagad"><i class="fab fa-github"></i></a>
+    <a
+      href="mailto:krishnalagad2@gmail.com?subject=Erase this and type your subject&body=Erase this and type your body"><i
+        class="fas fa-at"></i></a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="social-container">
+            <span class="fa-stack">
+              <a href="https://www.facebook.com/krishnalagad2/">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a href="https://twitter.com/krishnalagad__">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a href="https://www.instagram.com/krishna_lagad.insta/">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a href="https://www.linkedin.com/in/krishna-lagad/">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-linkedin fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a
+                href="mailto:krishnalagad2@gmail.com?subject=Erase this and type your subject&body=Erase this and type your body">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x"></i>
+              </a>
+            </span>
+
+            <span class="fa-stack">
+              <a href="https://github.com/krishnalagad">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x"></i>
+              </a>
+            </span>
+          </div>
+          <!-- end of social-container -->
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of footer -->
+  <!-- end of footer -->
+
+  <!-- Copyright -->
+  <div class="copyright bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-small">
+            Copyright ©
+            <a class="no-line" href="#about"><span class="copyright-text-name">Krishna Lagad</span></a>
+          </p>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- enf of row -->
+    </div>
+    <!-- end of container -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-small">
+            <img class="like-img" src="./images/img/like.png" alt="" />
+            <!-- <a class="no-line" href="https://themewagon.com/">Themewagon</a> -->
+          </p>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- enf of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of copyright -->
+  <!-- end of copyright -->
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <!-- jQuery for Bootstrap's JavaScript plugins -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Bootstrap framework -->
+  <script src="js/jquery.easing.min.js"></script>
+  <!-- jQuery Easing for smooth scrolling between anchors -->
+  <script src="js/scripts.js"></script>
+  <!-- Custom scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+</body>
+
+</html>
