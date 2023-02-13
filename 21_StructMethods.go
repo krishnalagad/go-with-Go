@@ -29,6 +29,7 @@ func (s Student) getAge() int {
 }
 
 func main() {
+	// setting values to object in constructor
 	s1 := Student{"Krishna", []int{60, 56, 54}, 22}
 	fmt.Println(s1)
 }
