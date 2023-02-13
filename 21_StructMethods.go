@@ -37,6 +37,16 @@ func (s Student) getAverageGrades() float32 {
 	return float32(sum) / float32(len(s.grades))
 }
 
+func (s Student) getMaxGrade() int {
+	curGrade := 0
+	for _, v := range s.grades {
+		if v > curGrade {
+			curGrade = v
+		}
+	}
+	return curGrade
+}
+
 func main() {
 	// setting values to object in constructor
 	s1 := Student{"Krishna", []int{60, 56, 54}, 22} // parameterized constructor
@@ -52,4 +62,5 @@ func main() {
 	fmt.Println(s2.getName(), s2.getGrades(), s2.getAge())
 
 	fmt.Println(s2.getAverageGrades())
+	fmt.Println(s2.getMaxGrade())
 }
