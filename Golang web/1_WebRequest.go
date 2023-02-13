@@ -19,6 +19,9 @@ func main() {
 	}
 
 	fmt.Printf("Response type is: %T", response)
+	fmt.Println("\nResponse status: ", response.Status)
+	fmt.Println("Response statuc code: ", response.StatusCode)
+	fmt.Println("Response header length: ", len(response.Header))
 
 	defer response.Body.Close() // user's responsibility to close the connection.
 
