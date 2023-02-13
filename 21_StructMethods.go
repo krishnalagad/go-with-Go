@@ -2,6 +2,33 @@ package main
 
 import "fmt"
 
+type Student struct {
+	name   string
+	grades []int
+	age    int
+}
+
+// setters and getters for struct: Student
+func (s Student) setName(name string) {
+	s.name = name
+}
+func (s Student) getName() string {
+	return s.name
+}
+func (s Student) setGrades(grades []int) {
+	s.grades = grades
+}
+func (s Student) getGrades() []int {
+	return s.grades
+}
+func (s Student) setAge(age int) {
+	s.age = age
+}
+func (s Student) getAge() int {
+	return s.age
+}
+
 func main() {
-	
+	s1 := Student{"Krishna", []int{60, 56, 54}, 22}
+	fmt.Println(s1)
 }
