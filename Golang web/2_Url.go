@@ -11,7 +11,7 @@ func main() {
 	fmt.Println("Golang URLs")
 	fmt.Println(myurl)
 
-	result, err := url.Parse(myurl)
+	result, err := url.Parse(myurl)	// url library is used to deal with URLs.
 	if err != nil {
 		panic(err)
 	}
@@ -30,7 +30,7 @@ func main() {
 	}
 
 	// build url
-	partsOfUrl := &url.URL{
+	partsOfUrl := &url.URL{		// & sign is imp.
 		Scheme:   "https",
 		Host:     "localhost",
 		Path:     "/learn",
