@@ -13,7 +13,7 @@ const url = "http://bit.ly/3x2D8oj"
 func main() {
 	fmt.Println("Golang web request")
 
-	response, err := http.Get(url)
+	response, err := http.Get(url)  // http library is used to send requests on web.
 	if err != nil {
 		panic(err)
 	}
