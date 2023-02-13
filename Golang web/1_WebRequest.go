@@ -11,7 +11,7 @@ import (
 const url = "http://bit.ly/3x2D8oj"
 
 func main() {
-	fmt.Println("Go web request")
+	fmt.Println("Golang web request")
 
 	response, err := http.Get(url)
 	if err != nil {
