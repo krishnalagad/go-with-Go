@@ -9,19 +9,19 @@ type Student struct {
 }
 
 // setters and getters for struct: Student
-func (s Student) setName(name string) {
+func (s *Student) setName(name string) {
 	s.name = name
 }
 func (s Student) getName() string {
 	return s.name
 }
-func (s Student) setGrades(grades []int) {
+func (s *Student) setGrades(grades []int) {
 	s.grades = grades
 }
 func (s Student) getGrades() []int {
 	return s.grades
 }
-func (s Student) setAge(age int) {
+func (s *Student) setAge(age int) {
 	s.age = age
 }
 func (s Student) getAge() int {
@@ -31,6 +31,7 @@ func (s Student) getAge() int {
 func main() {
 	// setting values to object in constructor
 	s1 := Student{"Krishna", []int{60, 56, 54}, 22}
+	s1.setName("Lagad")
 	fmt.Println(s1)
 
 	// using getters and setters
