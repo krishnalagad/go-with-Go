@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"strings"
 )
 
-func DoPostRequest(url string) {
+func DoPostRequest(myurl string) {
 
 	// making JSON data
 	requestBody := strings.NewReader(`
@@ -17,7 +18,12 @@ func DoPostRequest(url string) {
 		}
 	`)
 
-	response, err := http.Post(url, "application/json", requestBody)
+	// making JSON data
+	data := url.Values{}
+	data.Add("title", "Golang for Advanced")
+	data.Add("description", "Its Golang course for advanced learners")
+
+	response, err := http.Post(myurl, "application/json", requestBody)
 	if err != nil {
 		panic(err)
 	}
