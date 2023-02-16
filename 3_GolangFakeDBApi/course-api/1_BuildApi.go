@@ -75,7 +75,7 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode("Please send some data")
 	}
 
-	// id data is empty
+	// if data is empty
 	var course Course
 	_ = json.NewDecoder(r.Body).Decode(&course)
 	if course.IsEmpty() {
