@@ -86,15 +86,15 @@ func UpdateMovie(res http.ResponseWriter, req *http.Request) {
 	fmt.Println("PUT API - UpdateMovie")
 	res.Header().Set("Content-Type", "application/json")
 
-	params := mux.Vars(req)
+	params := mux.Vars(req) // getting all parameters
 
 	for index, movie := range movies {
-		if movie.MovieId == params["id"] {
-			movies = append(movies[:index], movies[index+1:]...)
+		if movie.MovieId == params["id"] { // getting query string parameter with key as 'id'
+			movies = append(movies[:index], movies[index+1:]...) // deleting movie with 'id'
 			var movie Movie
-			_ = json.NewDecoder(req.Body).Decode(&movie)
-			movie.MovieId = params["id"]
-			movies = append(movies, movie)
+			_ = json.NewDecoder(req.Body).Decode(&movie) // fetching data from request body into variable.
+			movie.MovieId = params["id"]                 // setting id of existing movie
+			movies = append(movies, movie)               // adding updated data into fake DB.
 			json.NewEncoder(res).Encode(movies)
 			return
 		}
