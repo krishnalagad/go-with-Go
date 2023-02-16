@@ -42,6 +42,7 @@ func (m *Movie) isCollectionEmpty() bool {
 	return m.MovieName == ""
 }
 
+// controller
 func ServeHome(res http.ResponseWriter, req *http.Request) {
 	res.Write([]byte("<h1>Welcome to Movie review API by Krishna</h1>"))
 }
@@ -81,6 +82,27 @@ func AddMovie(res http.ResponseWriter, req *http.Request) {
 	return
 }
 
+func UpdateMovie(res http.ResponseWriter, req *http.Request) {
+	fmt.Println("PUT API - UpdateMovie")
+	res.Header().Set("Content-Type", "application/json")
+
+	params := mux.Vars(req)
+
+	for index, movie := range movies {
+		if movie.MovieId == params["id"] {
+			movies = append(movies[:index], movies[index+1:]...)
+			var movie Movie
+			_ = json.NewDecoder(req.Body).Decode(&movie)
+			movie.MovieId = params["id"]
+			movies = append(movies, movie)
+			json.NewEncoder(res).Encode(movies)
+			return
+		}
+	}
+	json.NewEncoder(res).Encode("No data with given ID")
+	return
+}
+
 func main() {
 
 	fmt.Println("Movie review API's")
@@ -90,6 +112,7 @@ func main() {
 	// routing
 	r.HandleFunc("/", ServeHome).Methods("GET", "POST")
 	r.HandleFunc("/movie", AddMovie).Methods("POST")
+	r.HandleFunc("/movie/{id}", UpdateMovie).Methods("PUT")
 
 	// setting port
 	log.Fatal(http.ListenAndServe(":4000", r))
