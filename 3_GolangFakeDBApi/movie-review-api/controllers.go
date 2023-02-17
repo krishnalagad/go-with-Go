@@ -1,7 +1,5 @@
 package main
 
-import "net/http"
-
 // import (
 // 	"encoding/json"
 // 	"fmt"
@@ -51,18 +49,18 @@ import "net/http"
 // 	return
 // }
 
-func updateMovie(res http.ResponseWriter, req *http.Request) {
+// func updateMovie(res http.ResponseWriter, req *http.Request) {
 
-}
+// }
 
-func getMovie(res http.ResponseWriter, req *http.Request) {
+// func getMovie(res http.ResponseWriter, req *http.Request) {
 
-}
+// }
 
-func getAllMovies(res http.ResponseWriter, req *http.Request) {
+// func getAllMovies(res http.ResponseWriter, req *http.Request) {
 
-}
+// }
 
-func deleteMovie(res http.ResponseWriter, req *http.Request) {
+// func deleteMovie(res http.ResponseWriter, req *http.Request) {
 
-}
+// }

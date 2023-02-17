@@ -58,6 +58,7 @@ func AddMovie(res http.ResponseWriter, req *http.Request) {
 		json.NewEncoder(res).Encode("Please send some data")
 	}
 
+	// get movie data from request
 	_ = json.NewDecoder(req.Body).Decode(&movie)
 
 	// checking if data is empty
@@ -78,7 +79,7 @@ func AddMovie(res http.ResponseWriter, req *http.Request) {
 
 	// adding new movie into fake DB.
 	movies = append(movies, movie)
-	json.NewEncoder(res).Encode(movies)
+	json.NewEncoder(res).Encode(movie)
 	return
 }
 
@@ -103,9 +104,60 @@ func UpdateMovie(res http.ResponseWriter, req *http.Request) {
 	return
 }
 
+func GetMovie(res http.ResponseWriter, req *http.Request) {
+	fmt.Println("GET API - Get Movie")
+	res.Header().Set("Content-Type", "application/json")
+
+	params := mux.Vars(req)
+
+	for _, movie := range movies {
+		if movie.MovieId == params["id"] { // compare id from query string to the id in fakr db
+			json.NewEncoder(res).Encode(movie) // if found, send movie in responce
+			return
+		}
+	}
+	json.NewEncoder(res).Encode("No movie found with id " + params["id"])
+	return
+}
+
+func GetAllMovies(res http.ResponseWriter, req *http.Request) {
+	fmt.Println("GET API - Get all movies")
+	res.Header().Set("Content-Type", "application/json")
+
+	// check if db is nil
+	if movies == nil {
+		json.NewEncoder(res).Encode("No data available in DB.")
+		return
+	}
+
+	// send all data in response
+	json.NewEncoder(res).Encode(movies)
+	return
+}
+
+func DeleteMovie(res http.ResponseWriter, req *http.Request) {
+	fmt.Println("DELETE API - Delete movie")
+	res.Header().Set("Content-Type", "application/json")
+
+	params := mux.Vars(req)
+	var responce string
+
+	for index, movie := range movies {
+		if movie.MovieId == params["id"] {
+			movies = append(movies[:index], movies[index+1:]...)
+			responce = "Movie deleted successfully."
+			break
+		} else {
+			responce = "Movie not found with id: " + params["id"]
+		}
+	}
+	json.NewEncoder(res).Encode(responce)
+	return
+}
+
 func main() {
 
-	fmt.Println("Movie review API's")
+	fmt.Println("Project started - Movie review API's")
 
 	r := mux.NewRouter()
 
@@ -113,6 +165,9 @@ func main() {
 	r.HandleFunc("/", ServeHome).Methods("GET", "POST")
 	r.HandleFunc("/movie", AddMovie).Methods("POST")
 	r.HandleFunc("/movie/{id}", UpdateMovie).Methods("PUT")
+	r.HandleFunc("/movie/{id}", GetMovie).Methods("GET")
+	r.HandleFunc("/movies", GetAllMovies).Methods("GET")
+	r.HandleFunc("/movie/{id}", DeleteMovie).Methods("DELETE")
 
 	// setting port
 	log.Fatal(http.ListenAndServe(":4000", r))
