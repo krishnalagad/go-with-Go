@@ -2,9 +2,12 @@ package controller
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
+	"net/http"
 
+	"github.com/gorilla/mux"
 	"github.com/krishnalagad/mongo-api/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -111,3 +114,14 @@ func getAllMovies() []primitive.M {
 	}
 	return movies
 }
+
+// Actual controllers - file
+
+func GetAllMovies(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	allMovies := getAllMovies()
+	json.NewEncoder(w).Encode(allMovies)
+	return
+}
+
+
