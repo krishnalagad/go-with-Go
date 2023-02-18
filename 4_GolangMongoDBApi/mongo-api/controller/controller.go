@@ -55,7 +55,7 @@ func insertOneMovie(movie model.Netflix) {
 
 // update one record
 func updateOneMovie(movieId string) {
-	id, _ := primitive.ObjectIDFromHex(movieId)
+	id, _ := primitive.ObjectIDFromHex(movieId) // convert string id into Object ID in mongoDB.
 	filter := bson.M{"_id": id}
 	update := bson.M{"$set": bson.M{"watched": true}}
 
