@@ -132,6 +132,7 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 	_ = json.NewDecoder(r.Body).Decode(&movie)
 	insertOneMovie(movie)
 	json.NewEncoder(w).Encode(movie)
+	return
 }
 
 func MarkedAsWatched(w http.ResponseWriter, r *http.Request) {
@@ -140,4 +141,8 @@ func MarkedAsWatched(w http.ResponseWriter, r *http.Request) {
 
 	params := mux.Vars(r)
 	updateOneMovie(params["id"])
+	json.NewEncoder(w).Encode("Movie updated successfully.")
+	return
 }
+
+
