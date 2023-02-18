@@ -117,6 +117,10 @@ func getAllMovies() []primitive.M {
 
 // Actual controllers - file
 
+func ServeHome(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("<h1>Welcome to NetflixMongoDB API by Krishna</h1>"))
+}
+
 func GetAllMovies(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
 	allMovies := getAllMovies()
