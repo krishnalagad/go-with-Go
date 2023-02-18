@@ -122,14 +122,14 @@ func ServeHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetAllMovies(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	allMovies := getAllMovies()
 	json.NewEncoder(w).Encode(allMovies)
 	return
 }
 
 func CreateMovie(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Allow-Control-Allow-Methods", "POST")
 
 	var movie model.Netflix
@@ -140,7 +140,7 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 }
 
 func MarkedAsWatched(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Allow-Control-Allow-Methods", "PUT")
 
 	params := mux.Vars(r)
@@ -150,7 +150,7 @@ func MarkedAsWatched(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteOneMovie(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Allow-Control-Allow-Methods", "DELETE")
 
 	params := mux.Vars(r)
@@ -160,7 +160,7 @@ func DeleteOneMovie(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteAllMovie(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Allow-Control-Allow-Methods", "DELETE")
 
 	count := deleteAllMovies()
