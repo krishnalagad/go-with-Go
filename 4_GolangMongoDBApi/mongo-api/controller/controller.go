@@ -82,11 +82,32 @@ func deleteOneMovie(movieId string) {
 // delete all records from DB
 func deleteAllMovies() int64 {
 	filter := bson.D{{}}
-	result, err := collection.DeleteMany(context.Background(), filter)
+	result, err := collection.DeleteMany(context.Background(), filter, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Println("No.of movies deleted: ", result.DeletedCount)
 	return result.DeletedCount
+}
+
+// get all records from db
+func getAllMovies() []primitive.M {
+	cursor, err := collection.Find(context.Background(), bson.D{{}})
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer cursor.Close(context.Background())
+
+	var movies []primitive.M
+
+	for cursor.Next(context.Background()) {
+		var movie bson.M
+		err := cursor.Decode(&movie)
+		if err != nil {
+			log.Fatal(err)
+		}
+		movies = append(movies, movie)
+	}
+	return movies
 }
