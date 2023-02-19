@@ -57,7 +57,7 @@ func GetOneDocument(docid string) model.Document {
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
 			// This error means your query did not match any documents.
-			// return
+			return document
 		}
 		panic(err)
 	}
@@ -72,6 +72,12 @@ func UpdateOneDocument(doc model.Document, docid string) model.Document {
 	update := bson.M{"$set": bson.M{"name": doc.DocumentName, "type": doc.DocumentType, "islegal": doc.Legal, "Owner": doc.Owner}}
 
 	result, err := collection.UpdateOne(context.Background(), filter, update)
+
+	// result, err := collection.UpdateOne(
+	// 	context.Background(),
+	// 	bson.M{"_id": id},
+	// 	bson.M{"$set", bson.M{"name": doc.}},
+	// )
 	if err != nil {
 		log.Fatal(err)
 	}
