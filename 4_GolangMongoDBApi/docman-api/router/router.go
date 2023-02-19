@@ -11,8 +11,8 @@ func Router() *mux.Router {
 
 	router.HandleFunc("/", controller.ServerHome).Methods("GET", "POST")
 	router.HandleFunc("/api/doc", controller.CreateDocument).Methods("POST")
-	// router.HandleFunc("/api/doc", controller.CreateMovie).Methods("PUT")
-	// router.HandleFunc("/api/doc/{}", controller.CreateMovie).Methods("POST")
+	router.HandleFunc("/api/doc/{id}", controller.UpdateOneDocument).Methods("PUT")
+	router.HandleFunc("/api/doc/{id}", controller.GetOneDocument).Methods("GET")
 
 	return router
 }
