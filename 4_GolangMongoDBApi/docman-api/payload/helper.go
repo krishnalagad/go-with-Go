@@ -85,3 +85,23 @@ func UpdateOneDocument(doc model.Document, docid string) model.Document {
 
 	return GetOneDocument(docid)
 }
+
+func GetAllDocuments() []model.Document {
+	cur, err := collection.Find(context.Background(), bson.D{{}})
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer cur.Close(context.Background())
+
+	var documents []model.Document
+
+	for cur.Next(context.Background()) {
+		var document model.Document
+		err := cur.Decode(&document)
+		if err != nil {
+			log.Fatal(err)
+		}
+		documents = append(documents, document)
+	}
+	return documents
+}
