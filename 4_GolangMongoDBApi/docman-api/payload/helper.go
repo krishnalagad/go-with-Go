@@ -115,3 +115,12 @@ func DeleteOneDocument(docid string) int {
 	}
 	return int(deleteCount.DeletedCount)
 }
+
+func DeleteAllDocuments() int64 {
+	filter := bson.D{{}}
+	result, err := collection.DeleteMany(context.Background(), filter, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return result.DeletedCount
+}
