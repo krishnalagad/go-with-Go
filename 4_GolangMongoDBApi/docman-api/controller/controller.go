@@ -68,3 +68,12 @@ func DeleteOneDocument(res http.ResponseWriter, req *http.Request) {
 	json.NewEncoder(res).Encode("Record deleted with count " + string(rune(count)))
 	return
 }
+
+func DeleteAllDocuments(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	res.Header().Set("Allow-Control-Allow-Methods", "DELETE")
+
+	count := payload.DeleteAllDocuments()
+	json.NewEncoder(res).Encode("Movies deleted successfully " + string(rune(count)))
+	return
+}
