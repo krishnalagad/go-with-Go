@@ -48,3 +48,13 @@ func UpdateOneDocument(res http.ResponseWriter, req *http.Request) {
 	json.NewEncoder(res).Encode(result)
 	return
 }
+
+func GetAllDocuments(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/x-www-form-urlencoded")
+	res.Header().Set("Allow-Control-Allow-Methods", "GET")
+
+	allDocs := payload.GetAllDocuments()
+	json.NewEncoder(res).Encode(allDocs)
+	return
+
+}
