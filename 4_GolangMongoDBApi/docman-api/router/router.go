@@ -14,6 +14,7 @@ func Router() *mux.Router {
 	router.HandleFunc("/api/doc/{id}", controller.UpdateOneDocument).Methods("PUT")
 	router.HandleFunc("/api/doc/{id}", controller.GetOneDocument).Methods("GET")
 	router.HandleFunc("/api/docs", controller.GetAllDocuments).Methods("GET")
+	router.HandleFunc("/api/doc/{id}", controller.DeleteOneDocument).Methods("DELETE")
 
 	return router
 }

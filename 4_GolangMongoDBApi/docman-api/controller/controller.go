@@ -59,11 +59,12 @@ func GetAllDocuments(res http.ResponseWriter, req *http.Request) {
 
 }
 
-func DeleteOneDocument(res http.ResponseWriter, req *http.Request) int {
+func DeleteOneDocument(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/x-www-form-urlencoded")
-	res.Header().Set("Allow-Control-Allow-Methods", "GET")
+	res.Header().Set("Allow-Control-Allow-Methods", "DELETE")
 
 	params := mux.Vars(req)
 	count := payload.DeleteOneDocument(params["id"])
-	return count
+	json.NewEncoder(res).Encode("Record deleted with count " + string(rune(count)))
+	return
 }
