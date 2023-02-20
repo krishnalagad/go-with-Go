@@ -105,3 +105,13 @@ func GetAllDocuments() []model.Document {
 	}
 	return documents
 }
+
+func DeleteOneDocument(docid string) int {
+	id, _ := primitive.ObjectIDFromHex(docid)
+	filter := bson.M{"_id": id}
+	deleteCount, err := collection.DeleteOne(context.Background(), filter)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return int(deleteCount.DeletedCount)
+}
