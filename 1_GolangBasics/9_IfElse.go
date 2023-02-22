@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// main function 
 func main() {
 
 	name := "krishna"
