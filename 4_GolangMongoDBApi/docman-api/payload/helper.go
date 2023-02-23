@@ -67,23 +67,41 @@ func GetOneDocument(docid string) model.Document {
 // helper function to update one record.
 func UpdateOneDocument(doc model.Document, docid string) model.Document {
 	id, _ := primitive.ObjectIDFromHex(docid)
-	// document := GetOneDocument(docid)
+
 	filter := bson.M{"_id": id}
-	update := bson.M{"$set": bson.M{"name": doc.DocumentName, "type": doc.DocumentType, "islegal": doc.Legal, "Owner": doc.Owner}}
-
-	result, err := collection.UpdateOne(context.Background(), filter, update)
-
-	// result, err := collection.UpdateOne(
-	// 	context.Background(),
-	// 	bson.M{"_id": id},
-	// 	bson.M{"$set", bson.M{"name": doc.}},
-	// )
+	result, err := collection.ReplaceOne(
+		context.Background(),
+		filter,
+		bson.M{
+			"name":    doc.DocumentName,
+			"type":    doc.DocumentType,
+			"islegal": doc.Legal,
+			"Owner":   doc.Owner,
+		},
+	)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println("Modified count: ", result.ModifiedCount)
-
 	return GetOneDocument(docid)
+
+	// // document := GetOneDocument(docid)
+	// filter := bson.M{"_id": id}
+	// update := bson.M{"$set": bson.M{"name": doc.DocumentName, "type": doc.DocumentType, "islegal": doc.Legal, "Owner": doc.Owner}}
+
+	// result, err := collection.UpdateOne(context.Background(), filter, update)
+
+	// // result, err := collection.UpdateOne(
+	// // 	context.Background(),
+	// // 	bson.M{"_id": id},
+	// // 	bson.M{"$set", bson.M{"name": doc.}},
+	// // )
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// fmt.Println("Modified count: ", result.ModifiedCount)
+
+	// return GetOneDocument(docid)
 }
 
 func GetAllDocuments() []model.Document {
