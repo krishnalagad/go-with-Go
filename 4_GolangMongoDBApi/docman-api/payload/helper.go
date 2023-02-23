@@ -68,6 +68,8 @@ func GetOneDocument(docid string) model.Document {
 func UpdateOneDocument(doc model.Document, docid string) model.Document {
 	id, _ := primitive.ObjectIDFromHex(docid)
 
+	fmt.Println(doc)
+
 	filter := bson.M{"_id": id}
 	result, err := collection.ReplaceOne(
 		context.Background(),

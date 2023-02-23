@@ -2,6 +2,7 @@ package controller
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -44,6 +45,7 @@ func UpdateOneDocument(res http.ResponseWriter, req *http.Request) {
 	params := mux.Vars(req)
 	var document model.Document
 	_ = json.NewDecoder(req.Body).Decode(&document)
+	fmt.Println(document.DocumentName, document.DocumentType, document.Legal)
 	result := payload.UpdateOneDocument(document, params["id"])
 	json.NewEncoder(res).Encode(result)
 	return
