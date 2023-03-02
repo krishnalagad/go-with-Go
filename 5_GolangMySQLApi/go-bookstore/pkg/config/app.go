@@ -1,6 +1,10 @@
 package config
 
-import "github.com/jinzhu/gorm"
+import (
+	"log"
+
+	"github.com/jinzhu/gorm"
+)
 
 var (
 	db *gorm.DB
@@ -8,8 +12,9 @@ var (
 
 func Connect() {
 	d, err := gorm.Open("mysql", "root:krishna24/gobook?charset=utf8&parseTime=True&loc=Local")
+	// d, err := sql.Open("mysql", "root:krishna24/gobook?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	db = d
 }
