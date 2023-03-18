@@ -7,4 +7,7 @@ import (
 
 func UserRoute(router *gin.Engine) {
 	router.GET("/", controller.UserController)
+
+	userRepo := controller.New()
+	router.POST("/api/user/", userRepo.CreateUser)
 }
