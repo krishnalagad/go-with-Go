@@ -1,7 +1,6 @@
 package models
 
 import (
-	"github.com/krishnalagad/gin-gorm-rest/config"
 	"gorm.io/gorm"
 )
 
@@ -15,10 +14,10 @@ type User struct {
 	Designation string `json:"education"`
 }
 
-func init() {
-	db = config.InitDb()
-	db.AutoMigrate(&User{})
-}
+// func init() {
+// 	db = config.InitDb()
+// 	db.AutoMigrate(&User{})
+// }
 
 func CreateUser(db *gorm.DB, user *User) *User {
 	db.Create(user)
